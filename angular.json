@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "app-WishList"
+    }
+  },
+  "defaultProject": "app-WishList",
+  "cli": {
+    "analytics": "f2b1d625-d79f-4f96-abf8-dbdecccdb06f"
+  }
 }
