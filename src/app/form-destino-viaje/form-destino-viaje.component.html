@@ -1,0 +1,35 @@
+<form
+[formGroup]="fg"
+(ngSubmit) = "guardar(fg.controls['nombre'].value,fg.controls['url'].value)">
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nombre"
+        placeholder="Ingresar nombre..."
+        [formControl]= "fg.controls['nombre']"
+      />
+      <div *ngIf="!fg.controls['nombre'].valid" style="color: red;">Nombre Inválido</div>
+      <div *ngIf="fg.controls['nombre'].hasError('required')" style="color: red;">Nombre Requerido</div>
+      <div *ngIf="fg.controls['nombre'].hasError('invalidName')" style="color: red;">Nombre Incorrecto</div>
+      <div *ngIf="fg.controls['nombre'].hasError('invalidParametricName')" style="color: red;">Nombre No Parametrizado</div>
+    </div>
+    <div class="form-group">
+      <label for="Imagen	Url">Imagen Url</label>
+      <input
+        type="text"
+        class="form-control"
+        id="imagenUrl"
+        placeholder="Ingresar url..."
+        [formControl]= "fg.controls['url']"
+      />
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      *ngIf="fg.valid"
+    >
+      Guardar!
+    </button>
+  </form>
