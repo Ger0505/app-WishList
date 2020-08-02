@@ -3,9 +3,11 @@ export class DestinoViaje{
     // imagenURL: string;
     private selected: boolean;
     private servicios: string[];
+    public id: string;
 
-    constructor( public nombre:string, public imagenURL:string){
+    constructor(public nombre:string, public imagenURL:string){
         this.servicios = ['Hospital','Luz','Internet'];
+        this.id = '0';
     }
 
     getServicios():string[]{
