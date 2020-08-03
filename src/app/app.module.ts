@@ -4,6 +4,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { FormsModule,ReactiveFormsModule } from "@angular/forms";
 import { StoreModule as NgRxStoreModule, ActionReducerMap } from "@ngrx/store";
 import { EffectsModule } from "@ngrx/effects";
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -59,6 +60,7 @@ const reducersInitialState = {
       }
       }),
     EffectsModule.forRoot([DestinosViajeEffects]),
+    StoreDevtoolsModule.instrument()
   ],
   providers: [
       DestinosApiClient
