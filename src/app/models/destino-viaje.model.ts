@@ -1,13 +1,14 @@
+import { v4 as uuidv4 } from 'uuid';
+
 export class DestinoViaje{
-    // nombre:string;
-    // imagenURL: string;
     private selected: boolean;
     private servicios: string[];
     public id: string;
+    public votes: number = 0;
 
     constructor(public nombre:string, public imagenURL:string){
         this.servicios = ['Hospital','Luz','Internet'];
-        this.id = '0';
+        this.id = uuidv4();
     }
 
     getServicios():string[]{
@@ -20,6 +21,14 @@ export class DestinoViaje{
 
     setSelected(selected: boolean){
         this.selected = selected;
+    }
+
+    voteUp(){
+        this.votes++;
+    }
+
+    voteDown(){
+        this.votes--;
     }
 
 }
